@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'color.dart' as AppColors;
 
@@ -9,6 +10,13 @@ class DetailAudio extends StatefulWidget {
 }
 
 class _DetailAudioState extends State<DetailAudio> {
+  AudioPlayer? advancedPlayer;
+  @override
+  void initstate() {
+    super.initState();
+    advancedPlayer = AudioPlayer();
+  }
+
   @override
   Widget build(BuildContext context) {
     final double h = MediaQuery.of(context).size.height;
@@ -86,7 +94,7 @@ class _DetailAudioState extends State<DetailAudio> {
             height: h * 0.17,
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                // borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: Colors.white, width: 2),
                 color: AppColors.audioGreyBackground,
               ),
